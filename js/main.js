@@ -21,31 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add CSS for active mobile menu
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @media (max-width: 768px) {
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: var(--header-height);
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 2rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                animation: slideDown 0.3s ease-out forwards;
-            }
-            
-            @keyframes slideDown {
-                from { opacity: 0; transform: translateY(-10px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        }
-    `;
-    document.head.appendChild(style);
-
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
